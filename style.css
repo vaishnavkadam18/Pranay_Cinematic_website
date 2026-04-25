@@ -9,45 +9,58 @@ body {
     background: black;
     color: white;
 }
-
-/* HERO */
 .hero {
     height: 100vh;
-    position: relative; /* IMPORTANT for overlay */
-    background: url('camera.jpg') no-repeat right center;
-    background-size: 80%; /* 🔥 control image size */
-    background-color: rgb(7, 7, 7); /* fill empty space */
+    position: relative;
+    background: url('camera.jpg') no-repeat center center;
+    background-size: cover;
+    background-color: rgb(7, 7, 7);
 }
 
-/* DARK OVERLAY */
 .overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.3); /* darker for better text */
+    background: rgba(0, 0, 0, 0.5);
     z-index: 1;
 }
 
-/* CONTENT */
 .hero-content {
     position: absolute;
     bottom: 100px;
     left: 50px;
-    z-index: 2; /* above overlay */
+    z-index: 2;
 }
 
-/* TEXT */
 .hero h1 {
     font-size: 50px;
-    margin-bottom: 10px;
 }
 
 .hero p {
     font-size: 18px;
     color: #ccc;
 }
+
+/* MOBILE FIX */
+@media (max-width: 768px) {
+
+    .hero-content {
+        left: 20px;
+        right: 20px;
+        bottom: 60px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+}
+
 
 /* BUTTONS */
 .buttons {
@@ -229,4 +242,27 @@ html {
         flex-direction: column;
     }
 }
+.marquee {
+    overflow: hidden;
+    white-space: nowrap;
+    background: black;
+    color: white;
+    padding: 10px 0;
+}
 
+.marquee-content {
+    display: inline-block;
+    padding-left: 100%;
+    animation: scroll 15s linear infinite;
+    font-size: 14px;
+}
+
+/* Smooth animation */
+@keyframes scroll {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
