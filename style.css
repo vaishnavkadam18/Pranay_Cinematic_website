@@ -1,0 +1,232 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: black;
+    color: white;
+}
+
+/* HERO */
+.hero {
+    height: 100vh;
+    position: relative; /* IMPORTANT for overlay */
+    background: url('camera.jpg') no-repeat right center;
+    background-size: 80%; /* 🔥 control image size */
+    background-color: rgb(7, 7, 7); /* fill empty space */
+}
+
+/* DARK OVERLAY */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* darker for better text */
+    z-index: 1;
+}
+
+/* CONTENT */
+.hero-content {
+    position: absolute;
+    bottom: 100px;
+    left: 50px;
+    z-index: 2; /* above overlay */
+}
+
+/* TEXT */
+.hero h1 {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #ccc;
+}
+
+/* BUTTONS */
+.buttons {
+    margin-top: 20px;
+}
+
+.btn {
+    background: gold;
+    color: black;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+}
+
+.insta {
+    margin-left: 15px;
+    color: white;
+    text-decoration: none;
+}
+
+/* 📱 MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+    .hero {
+        background-size: 80%;
+        background-position: center top;
+    }
+
+    .hero-content {
+        left: 20px;
+        bottom: 50px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+}
+
+/* ABOUT */
+.about {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+/* PORTFOLIO */
+.portfolio {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.grid video {
+    width: 100%;
+    border-radius: 10px;
+    transition: 0.4s;
+}
+
+.grid video:hover {
+    transform: scale(1.08);
+}
+
+/* INSTAGRAM */
+.instagram {
+    padding: 60px;
+    text-align: center;
+}
+
+/* CONTACT */
+.contact {
+    padding: 80px;
+    text-align: center;
+}
+
+/* FOOTER */
+footer {
+    padding: 20px;
+    text-align: center;
+    background: #111;
+}
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    transition: 0.3s;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
+.contact-form select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+}
+.marquee {
+    overflow: hidden;
+    white-space: nowrap;
+    animation: scroll 15s linear infinite;
+}
+
+@keyframes scroll {
+    from { transform: translateX(100%); }
+    to { transform: translateX(-100%); }
+}
+.insta {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.insta i {
+    margin-right: 8px;
+    color: #E1306C; /* Instagram color */
+}
+html {
+    scroll-behavior: smooth;
+}
+/* CONTACT SECTION */
+.contact {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.error {
+    color: #ff4d4d;
+    font-size: 12px;
+    margin-top: 5px;
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+/* SECTION */
+.info-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 40px 20px;
+}
+
+/* BOX */
+.info-box {
+    flex: 1;
+    background: rgba(255,255,255,0.05);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* HEADING */
+.info-box h3 {
+    color: gold;
+    margin-bottom: 10px;
+}
+
+/* TEXT */
+.info-box p {
+    line-height: 1.6;
+}
+@media (max-width: 768px) {
+    .info-section {
+        flex-direction: column;
+    }
+}
+
