@@ -253,20 +253,42 @@ html {
         flex-direction: column;
     }
 }
+
 .marquee {
     overflow: hidden;
     white-space: nowrap;
     background: black;
     color: white;
     padding: 10px 0;
+    position: relative;
 }
 
 .marquee-content {
     display: inline-block;
+    white-space: nowrap;
     padding-left: 100%;
-    animation: scroll 25s linear infinite;
+    animation: scroll 8s linear infinite;
     font-size: 14px;
 }
+
+/* Smooth animation */
+@keyframes scroll {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* 📱 MOBILE */
+@media (max-width: 768px) {
+    .marquee-content {
+        animation: scroll 5s linear infinite;
+        font-size: 12px;
+    }
+}
+
 
 /* Smooth animation */
 @keyframes scroll {
